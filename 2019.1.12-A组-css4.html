@@ -1,0 +1,228 @@
+﻿<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>葡萄藤PPT</title>
+
+		<link rel="stylesheet" href="../css/reveal/reveal.css">
+
+		<!-- PPT主题，可以在/css/reveal/theme/中选择其他主题，目前暂时只能使用该模板 -->
+		<link rel="stylesheet" href="../css/reveal/theme/ptt.css">
+
+		<!-- syntax highlighting 代码高亮主题 -->
+		<link rel="stylesheet" href="../lib/reveal/css/zenburn.css">
+
+		<!-- 打印和PDF输出样式 -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? '../css/reveal/print/pdf.css' : '../css/reveal/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+		<style>
+			.reveal pre code {
+				background-color: #120;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img src="../img/demo/logo.png" alt="" usemap="#pttmap" class="base-logo">
+		<map name="pttmap">
+    <area shape="rect" coords="0,0,276,58" href="http://www.jnshu.com" alt="" target="_blank"/>
+</map>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h4>小课堂</h4>
+					<h4>【CSS】position有哪几种及其特点？</h4>
+					<h4>分享人：桂梦</h4>
+
+				</section>
+				<section>
+					<p>目录</p>
+					<p>1.背景介绍</p>
+					<p>2.知识剖析</p>
+					<p>3.常见问题</p>
+					<p>4.解决方案</p>
+					<p>5.编码实战</p>
+					<p>6.扩展思考</p>
+					<p>7.参考文献</p>
+					<p>8.更多讨论</p>
+				</section>
+				<section>
+					<section>
+						<h3>1.背景介绍</h3>
+					</section>
+					<section>
+						<p>
+						position是css中一个重要的属性，通过position属性，我们可以让元素相对于其正常位置，父元素或者浏览器窗口进行偏移。
+						</p>
+						<p>position的概念：
+						posiyion属性把元素放置在一个静态的、相对的、绝对的、或固定的的位置中。
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>2.知识剖析</h3>
+					</section>
+					<section>
+						<h3>常用的属性值有四个:</h3>
+						<p>static:是所有元素默认后的position属性。<br>
+						我们布局中常用的相对定位和绝对定位中的属性值都无效。它的用法是让使用了相对定位和绝对定位的元素重新回归到普通文档流中。
+						</p>
+					</section>
+					<section>
+						<p>relative 是相对定位。<br>
+							每一个元素在页面的普通流中会占用一个位置，这个位置可以理解为默认位置。<br>
+							相对定位就是将元素偏离它的默认位置，但是它原有的位置并不会发生改变保留着原来的位置，没有脱离文档流，只是视觉上发生了偏移。
+                            但是relative并不会改变display属性。
+						</p>
+					</section>
+					<section>
+						<p>absolute 是绝对定位。<br>
+							它的元素会循着节点树中的父元素来确定根，然后相对根元素来偏移位置。<br>
+							如果所有的父元素都没有设置相对定位或者绝对定位，它是会寻找html的根目录来进行位置的偏移。
+						</p>
+					</section>
+					<section>
+						<p> fiexd 是固定定位。<br>
+							因为兼容性的问题并没有得到广泛的应用，一般多用于浏览器的窗口固定作用。
+						</p>
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h3>3.常见问题</h3>
+					</section>
+					<section>
+						<p>1、相对定位和绝对定位的搭配使用效果？</p>
+						<p>2、使用fiexd固定元素后会出现透明的现象。</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>4.解决方案</h3>
+					</section>
+					<section>
+						<p>
+						1、绝对定位是以非static定位的祖先元素进行定位，如果没有则以html根目录进行定位，
+						所以我们可以利用这个性质给父元素进行相对定位，相对定位本身不会改变元素的display属性，
+						这样可以便于控制子元素的定位，搭配使用效果是比较好的。
+						</p>
+						<p>
+						2、	这里可以用z-index属性来解决。<br>
+						z-index属性指定了元素与子元素的顺序，“Z顺序”可以决定当元素发生覆盖的时候，什么元素在上。
+						通常z-index值较大的元素会覆盖较低的那一个。
+						z-index属性只对定位元素有作用，非static（静态）的定位属性，z-index才会生效。
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>5.编码实战</h3>
+					</section>
+
+					<section><a href="">demo</a></section>
+
+				</section>
+				<section>
+					<section>
+						<h3>6.扩展思考</h3>
+					</section>
+					<section>
+						<p>fiexd和absolute的共同点和区别有哪些？</p>
+					</section>
+					<section>
+						<h3>共同点:</h3>
+						<p>1.会改变行内元素的呈现模式，使display变更为block。<br>
+							2.会让元素脱离普通流，不占据空间。<br>
+							3.默认会覆盖到非定位元素上。
+						</p>
+						<h3>区别：</h3>
+						<p>absolute的根元素是可以被设置的，但是fiexd的根元素是固定在浏览器窗口，当你
+						滚动网页，其元素与浏览器窗口之间的距离是恒定不变的。</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>7.参考文献</h3>
+					</section>
+					<section>
+						参考一：<a href="https://www.jianshu.com/p/3bf47d1b2eb9">简书</a><br>
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h3>8.更多讨论</h3>
+					</section>
+					<section>
+						<p>
+							
+						</p>
+					</section>
+				</section>
+				<section>
+					<h4>鸣谢</h4>
+					<p>感谢大家观看</p>
+					<p>
+						By
+						<small style="vertical-align: middle">桂梦</small>
+					</p>
+				</section>
+			</div>
+		</div>
+		<script src="../lib/reveal/js/head.min.js"></script>
+		<script src="../lib/reveal/reveal.js"></script>
+		<script>
+			// 以下为常见配置属性的默认值
+			// {
+			// 	controls: true, // 是否在右下角展示控制条
+			// 	progress: true, // 是否显示演示的进度条
+			// 	slideNumber: false, // 是否显示当前幻灯片的页数编号，也可以使用代码slideNumber: 'c / t' ，表示当前页/总页数。
+			// 	history: false, // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+			// 	keyboard: true, // 是否启用键盘快捷键来导航
+			// 	overview: true, // 是否启用幻灯片的概览模式，可使用"Esc"或"o"键来切换概览模式
+			// 	center: true, // 是否将幻灯片垂直居中
+			// 	touch: true, // 是否在触屏设备上启用触摸滑动切换
+			// 	loop: false, // 是否循环演示
+			// 	rtl: false, // 是否将演示的方向变成RTL，即从右往左
+			// 	fragments: true, // 全局开启和关闭碎片。
+			// 	autoSlide: 0, // 两个幻灯片之间自动切换的时间间隔（毫秒），当设置成 0 的时候则禁止自动切换，该值可以被幻灯片上的 ` data-autoslide` 属性覆盖
+			// 	transition: 'default', // 切换过渡效果，有none/fade/slide/convex/concave/zoom
+			// 	transitionSpeed: 'default', // 过渡速度，default/fast/slow
+			// 	mouseWheel: true, //是否启用通过鼠标滚轮来切换幻灯片
+			// }
+			// 初始化幻灯片
+			Reveal.initialize({
+				history: true,
+				dependencies: [{
+						src: '../plugin/markdown/marked.js'
+					},
+					{
+						src: '../plugin/markdown/markdown.js'
+					},
+					{
+						src: '../plugin/notes/notes.js',
+						async: true
+					},
+					{
+						src: '../plugin/highlight/highlight.js',
+						async: true,
+						callback: function() {
+							hljs.initHighlightingOnLoad();
+						}
+					}
+				]
+			});
+		</script>
+	</body>
+
+</html>
