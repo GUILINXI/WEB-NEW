@@ -1,0 +1,241 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>葡萄藤PPT</title>
+
+	<link rel="stylesheet" href="../css/reveal/reveal.css">
+
+	<!-- PPT主题，可以在/css/reveal/theme/中选择其他主题，目前暂时只能使用该模板 -->
+	<link rel="stylesheet" href="../css/reveal/theme/ptt.css">
+
+	<!-- syntax highlighting 代码高亮主题 -->
+	<link rel="stylesheet" href="../lib/reveal/css/zenburn.css">
+
+	<!-- 打印和PDF输出样式 -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../css/reveal/print/pdf.css' :
+			'../css/reveal/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		.reveal pre code {
+			background-color: #120;
+		}
+	</style>
+</head>
+
+<body>
+	<img src="../img/demo/logo.png" alt="" usemap="#pttmap" class="base-logo">
+	<map name="pttmap">
+		<area shape="rect" coords="0,0,276,58" href="http://www.jnshu.com" alt="" target="_blank" />
+	</map>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h4>小课堂【任务13】</h4>
+				<h4>移动端有哪些常见的布局方式？</h4>
+				<h4>分享人：桂梦</h4>
+
+			</section>
+			<section>
+				<p>目录</p>
+				<p>1.背景介绍</p>
+				<p>2.知识剖析</p>
+				<p>3.常见问题</p>
+				<p>4.解决方案</p>
+				<p>5.编码实战</p>
+				<p>6.扩展思考</p>
+				<p>7.参考文献</p>
+				<p>8.更多讨论</p>
+			</section>
+			<section>
+				<section>
+					<h3>1.背景介绍</h3>
+				</section>
+				<section>
+					<p>
+						随着智能手机的普及以及社会的发展，传统的网站布局已经无法适应现状。
+						我们编写的网页不仅仅要展示在电脑上，也要展示在移动设备上，而移动设备种类繁多，
+						一般的电脑端的页面布局在手机上无法完全适应，所以在手机端上我们要重新布局。
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>2.知识剖析</h3>
+				</section>
+				<section>
+					<h3>2-1 固定布局</h3>
+					<p>
+						固定布局在css中是比较常见的布局方式，因为宽高的固定方使布局变得简便，使开发人员对于布局和定位有更大控制。<br>
+						缺点：
+						因为宽度是固定的，无论屏幕尺寸怎么改变，它的尺寸总是不变的，无法充分利用空间。
+					</p>
+					<a href="../小课堂demo/task13/gdbj.html">demo</a>
+				</section>
+				<section>
+					<h3>2-2 流体布局</h3>
+					<p>
+						流体布局和固定布局不同点在于对网站尺寸的测量单位不同，固定布局使用的是像素px，但是流体布局使用的是百分比，
+						这提供了很强的可塑性和流动性。可以这样说，设置成百分比就不用考虑设备的尺寸或者屏幕的宽度，可以很好的解决自适应的需求。<br>
+						缺点：
+						当窗口宽度较小的时候，行变得非常窄，不好阅读。
+					</p>
+					<a href="../小课堂demo/task13/ltbj.html">demo</a>
+				</section>
+				<section>
+					<h3>2-3 flex布局</h3>
+					<p>Flexbox是css3引入新的布局模式，也称弹性布局，会根据页面的剩余宽度自动分配空间。它决定了元素如何在页面上排列，
+						使它们能在不同的屏幕尺寸和设备下可预测的展现出来，能够扩展和收缩flex容器内的元素，以最大限度的填充可以空间。
+						Flexbox布局最适合应用程序的组件和小规模的布局。
+					</p>
+				</section>
+				<section>
+					<h3>2-4 媒体查询和rem布局</h3>
+					<p>媒体查询可以根据不同的设备宽度加载不同的css样式。rem是一个相对单位，会根据节点的字体大小来计算，使用媒体查询
+						和rem可以实现移动端的响应式。
+					</p>
+				</section>
+				<section>
+					<h3>2-5 栅格布局</h3>
+					<p>bootstrap是一个比较流行的响应式前端框架，利用bootstrap的栅格系统可以实现响应式的移动端布局。栅格系统：是bootstrap
+						中定义了一套响应式的网格系统，其使用方式就是将一个容器划分成12列。然后通过col-的类名控制每一列的占比，使用的时候给相
+						应的div设置col-lg-3，md，sm，xs，以此完成布局。
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>3.常见问题</h3>
+				</section>
+				<section>
+					<p>
+						移动端字体单位font-size选择像素px还是rem相对单位？
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>4.解决方案</h3>
+				</section>
+				<section>
+					<h3>分两种情况：</h3>
+					<p>
+						1、对于只需要适配的手机设备直接使用px就可以了。<br>
+						2、对于需要适配各种手机移动设备，使用rem相对要好些。<br>
+						因为随着字体的大小改变屏幕里的内容也会改变，从而实现自适应。
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>5.编码实战</h3>
+				</section>
+
+				<section><a href="">demo</a></section>
+
+			</section>
+			<section>
+				<section>
+					<h3>6.扩展思考</h3>
+				</section>
+				<section>
+					<h3>移动端与pc端的区别？</h3>
+				</section>
+				<section>
+					<p>1、pc端考虑的是浏览器的兼容性，移动端考虑的是手机兼容性，现在不管什么系统的手机还是浏览器都是使用webkit内核，
+						但是做移动端开发，更多的是考虑手机分辨率的适配和不同操作系统的略微差异化。<br>
+					   2、在部分事件的处理上，移动端多出来的事件是触屏事件，而缺少的是hover事件。另外包括移动端弹出的手机键盘的处理，
+						这样的问题在pc端都遇不到的。<br>
+						3、在布局上，移动端开发一般是要做到布局自适应的，我使用的一直是rem布局，感觉很好。<br>
+						4、在动画处理上，PC端由于要考虑IE的兼容性，所以通常使用JS做动画的通用性会更好一些，但是CSS3做了很大的牺牲， 
+						而在手机端，如果要做一些动画、特效等，第一选择肯定是CSS3， 既简单、效率又高。
+					</p>
+				</section>
+				<section>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>7.参考文献</h3>
+				</section>
+				<section>
+					参考一：<a href="https://www.html.cn/archives/7760">基本Flexbox布局</a><br>
+					参考二：<a href="https://www.jianshu.com/p/91febb9b827d">简书移动web开发中常见布局方式及问题</a><br>
+				</section>
+
+			</section>
+			<section>
+				<section>
+					<h3>8.更多讨论</h3>
+				</section>
+				<section>
+					<p>
+
+					</p>
+				</section>
+			</section>
+			<section>
+				<h4>鸣谢</h4>
+				<p>感谢大家观看</p>
+				<p>
+					By
+					<small style="vertical-align: middle">桂梦</small>
+				</p>
+			</section>
+		</div>
+	</div>
+	<script src="../lib/reveal/js/head.min.js"></script>
+	<script src="../lib/reveal/reveal.js"></script>
+	<script>
+		// 以下为常见配置属性的默认值
+		// {
+		// 	controls: true, // 是否在右下角展示控制条
+		// 	progress: true, // 是否显示演示的进度条
+		// 	slideNumber: false, // 是否显示当前幻灯片的页数编号，也可以使用代码slideNumber: 'c / t' ，表示当前页/总页数。
+		// 	history: false, // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+		// 	keyboard: true, // 是否启用键盘快捷键来导航
+		// 	overview: true, // 是否启用幻灯片的概览模式，可使用"Esc"或"o"键来切换概览模式
+		// 	center: true, // 是否将幻灯片垂直居中
+		// 	touch: true, // 是否在触屏设备上启用触摸滑动切换
+		// 	loop: false, // 是否循环演示
+		// 	rtl: false, // 是否将演示的方向变成RTL，即从右往左
+		// 	fragments: true, // 全局开启和关闭碎片。
+		// 	autoSlide: 0, // 两个幻灯片之间自动切换的时间间隔（毫秒），当设置成 0 的时候则禁止自动切换，该值可以被幻灯片上的 ` data-autoslide` 属性覆盖
+		// 	transition: 'default', // 切换过渡效果，有none/fade/slide/convex/concave/zoom
+		// 	transitionSpeed: 'default', // 过渡速度，default/fast/slow
+		// 	mouseWheel: true, //是否启用通过鼠标滚轮来切换幻灯片
+		// }
+		// 初始化幻灯片
+		Reveal.initialize({
+			history: true,
+			dependencies: [{
+					src: '../plugin/markdown/marked.js'
+				},
+				{
+					src: '../plugin/markdown/markdown.js'
+				},
+				{
+					src: '../plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: '../plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
+</body>
+
+</html>
